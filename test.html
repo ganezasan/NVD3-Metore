@@ -3,13 +3,37 @@
 </head>
 
 <body>
-  {{> hello}}
+  <div class="container">
+    {{> header}}
+    <div id="main" class="row-fluid">
+      {{> hello}}
+    </div>
+  </div>
 </body>
+
+<template name="header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">NVD3+Meteor</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
 
 <template name="hello">
   <div id="chart">
-    <svg style="height:400px;width:700px"/>
+    <svg style="height:500px;"/>
   </div>
-  <button id="addDataButton">Add data</button>
-  <button id="removeDataButton">Remove data</button>
+  <div style="text-align:right;">
+    {{#if currentUser}}
+      <a class="btn" href="#" id="addDataButton">Add</a>
+      <a class="btn" href="#" id="removeDataButton">Remove</a>
+    {{/if}}
+  </div>
 </template>

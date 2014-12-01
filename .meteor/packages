@@ -8,3 +8,7 @@ autopublish
 insecure
 mrt:nvd3js@0.1.0
 d3
+mizzao:bootstrap-3
+ian:accounts-ui-bootstrap-3
+accounts-password
+
